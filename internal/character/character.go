@@ -7,21 +7,7 @@ import (
 
 const (
 	CharId = "Char_id"
-	RaceId = "Race_id"
 	PlayerId = "Player_id"
-	CampaignId = "Campaign_id"
-	CampaignCredentials = "Campaign_credentials"
-	Age = "Age"
-	Gender = "Gender"
-	Name = "Name"
-	Level = "Level"
-	Alignment = "Alignment"
-	Deity = "Deity"
-	Height = "Height"
-	HeightUnit = "Height_unit"
-	Weight = "Weight"
-	WeightUnit = "WeightUnit"
-	Creation_date = "Creation_date"
 )
 
 type Character struct {
