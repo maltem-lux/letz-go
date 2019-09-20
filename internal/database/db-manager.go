@@ -10,9 +10,9 @@ import (
 const (
 	host     = "localhost"
 	port     = 5432
-	user     = "jerem"
+	user     = "postgres"
 	password = "root"
-	dbname   = "hubmaltem"
+	dbname   = "postgres"
 )
 
 type DbManagerInterface interface {
