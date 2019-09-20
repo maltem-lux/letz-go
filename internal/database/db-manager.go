@@ -7,14 +7,6 @@ import (
 	"log"
 )
 
-const (
-	host     = "localhost"
-	port     = 5432
-	user     = "postgres"
-	password = "root"
-	dbname   = "postgres"
-)
-
 type DbManagerInterface interface {
 	GetConnection() *gorm.DB
 	// Add other methods
@@ -29,7 +21,7 @@ var DbMgr DbManagerInterface
 func init() {
 	dbConnectionString := fmt.Sprintf(
 		"host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
-		host, port, user, password, dbname)
+		Host, Port, User, Password, DbName)
 	con, err := gorm.Open("postgres", dbConnectionString)
 
 	if err != nil {
