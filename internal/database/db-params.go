@@ -3,9 +3,9 @@ package database
 const (
 	Host     = "localhost"
 	Port     = 5432
-	User     = "jerem"
+	User     = "postgres"
 	Password = "root"
-	DbName   = "letz-go"
+	DbName   = "postgres"
 )
 
 
