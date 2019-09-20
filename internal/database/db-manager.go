@@ -1,8 +1,8 @@
 package database
 
 import (
-	"database/sql"
 	"fmt"
+	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
 	"log"
 )
@@ -12,16 +12,16 @@ const (
 	port     = 5432
 	user     = "jerem"
 	password = "root"
-	dbname   = "hubmaltem"
+	dbname   = "letz-go"
 )
 
 type DbManagerInterface interface {
-	ExecuteSelectQuery(query string) *sql.Rows
+	GetConnection() *gorm.DB
 	// Add other methods
 }
 
 type databaseManager struct {
-	db *sql.DB
+	db *gorm.DB
 }
 
 var DbMgr DbManagerInterface
@@ -30,7 +30,7 @@ func init() {
 	dbConnectionString := fmt.Sprintf(
 		"host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
 		host, port, user, password, dbname)
-	con, err := sql.Open("postgres", dbConnectionString)
+	con, err := gorm.Open("postgres", dbConnectionString)
 
 	if err != nil {
 		panic("Error initializing db")
@@ -40,11 +40,6 @@ func init() {
 	DbMgr = &databaseManager{db: con}
 }
 
-func (mgr *databaseManager) ExecuteSelectQuery(query string) *sql.Rows {
-
-	rows, err := mgr.db.Query(query)
-	if err != nil {
-		panic(err)
-	}
-	return rows
+func (mgr *databaseManager) GetConnection() *gorm.DB {
+	return mgr.db
 }
