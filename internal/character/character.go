@@ -1,8 +1,13 @@
-package entitites
+package character
 
 import (
 	"fmt"
 	"time"
+)
+
+const (
+	CHAR_ID = "Char_id"
+	PLAYER_ID = "Player_id"
 )
 
 type Character struct {
