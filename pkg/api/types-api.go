@@ -1,15 +1,12 @@
 package api
 
 import (
-	"encoding/json"
-	"fmt"
+		"fmt"
 	"log"
 	"net/http"
-	"github.com/maltem-lux/letz-go/internal/database"
-	"github.com/maltem-lux/letz-go/internal/data"
+	"github.com/maltem-lux/letz-go/internal/ability"
+	"encoding/json"
 )
-
-var abilities = make([]data.Ability, 0)
 
 func homePage(w http.ResponseWriter, r *http.Request){
 	fmt.Fprintf(w, "Welcome to the HomePage!")
@@ -23,12 +20,11 @@ func HandleRequests() {
 }
 
 func returnAbilities(w http.ResponseWriter, r *http.Request){
-	abilities = make([]data.Ability, 0)
-	enableCors(&w)
 	fmt.Println("Endpoint Hit: returnAbilities")
-	database.DbMgr.GetConnection().Find(&abilities)
+	enableCors(&w)
+	a:= ability.FindAll()
+	json.NewEncoder(w).Encode(a)
 	fmt.Println("Abilities retrieved.")
-	json.NewEncoder(w).Encode(abilities)
 }
 
 func enableCors(w *http.ResponseWriter) {

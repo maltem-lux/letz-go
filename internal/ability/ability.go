@@ -1,4 +1,4 @@
-package entitites
+package ability
 
 import (
 	"fmt"
@@ -12,6 +12,6 @@ type Ability struct {
 }
 
 func (a *Ability) ToString() string {
-	return fmt.Sprintf("Ability_id : %v, Name : %v, Short_nm : %v, Description : %v, ",
+	return fmt.Sprintf("Ability_id : %v, Name : %v, Short_nm : %v, Description : %v",
 		a.Ability_id, a.Name, a.Short_nm, a.Description)
 }
