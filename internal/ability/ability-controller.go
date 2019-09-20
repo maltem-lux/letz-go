@@ -1,10 +1,9 @@
-package api
+package ability
 
 import (
 		"fmt"
 	"log"
 	"net/http"
-	"github.com/maltem-lux/letz-go/internal/ability"
 	"encoding/json"
 )
 
@@ -22,7 +21,7 @@ func HandleRequests() {
 func returnAbilities(w http.ResponseWriter, r *http.Request){
 	fmt.Println("Endpoint Hit: returnAbilities")
 	enableCors(&w)
-	a:= ability.FindAll()
+	a:= FindAll()
 	json.NewEncoder(w).Encode(a)
 	fmt.Println("Abilities retrieved.")
 }

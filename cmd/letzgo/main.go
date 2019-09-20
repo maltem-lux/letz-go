@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/maltem-lux/letz-go/pkg/api"
+	"github.com/maltem-lux/letz-go/pkg/controllers"
 )
 
 func main() {
-	api.HandleRequests()
+	controllers.HandleRequests()
 }

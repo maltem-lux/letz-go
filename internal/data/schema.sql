@@ -19,7 +19,7 @@ VALUES (3, 'CONSTITUTION', 'CON', 'Constitution of the character');
 INSERT INTO ABILITIES
 VALUES (4, 'INTELLIGENCE', 'INT', 'Intelligence of the character');
 INSERT INTO ABILITIES
-VALUES (5, 'WISDOM', 'Wis', 'Wisdom of the character');
+VALUES (5, 'WISDOM', 'WIS', 'Wisdom of the character');
 INSERT INTO ABILITIES
 VALUES (6, 'CHARISMA', 'CHA', 'Charisma of the character');
 /* LAST VALUES MUST ALWAYS BE 0. THEY ARE SET IN THE CHAR BUILDER */
