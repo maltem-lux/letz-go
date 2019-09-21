@@ -1,10 +1,11 @@
 package ability
 
 import (
-		"fmt"
+	"encoding/json"
+	"fmt"
+	"github.com/maltem-lux/letz-go/internal/cors"
 	"log"
 	"net/http"
-	"encoding/json"
 )
 
 func homePage(w http.ResponseWriter, r *http.Request){
@@ -18,14 +19,11 @@ func HandleRequests() {
 	log.Fatal(http.ListenAndServe(":10000", nil))
 }
 
-func returnAbilities(w http.ResponseWriter, r *http.Request){
+func returnAbilities(w http.ResponseWriter, r *http.Request) {
+	cors.EnableCors(&w)
 	fmt.Println("Endpoint Hit: returnAbilities")
-	enableCors(&w)
+
 	a:= FindAll()
 	json.NewEncoder(w).Encode(a)
 	fmt.Println("Abilities retrieved.")
-}
-
-func enableCors(w *http.ResponseWriter) {
-	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
