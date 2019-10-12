@@ -218,6 +218,26 @@ VALUES (
            CURRENT_TIMESTAMP
            );
 
+INSERT INTO characters
+VALUES (
+           2,
+           1,
+           1,
+           1,
+           1,
+           34,
+           'M',
+           'Milly',
+           1,
+           'Angelus',
+           null,
+           205,
+           'cm',
+           55,
+           'kg',
+           CURRENT_TIMESTAMP
+           );
+
 DROP TABLE IF EXISTS CLASS_FEATS;
 CREATE TABLE CLASS_FEATS
 (
