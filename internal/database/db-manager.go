@@ -25,7 +25,8 @@ func init() {
 	con, err := gorm.Open("postgres", dbConnectionString)
 
 	if err != nil {
-		panic("Error initializing db")
+		errMsg, _ := fmt.Printf("Error initializing db %s", err)
+		panic(errMsg)
 	} else {
 		log.Print("DB Initialized successfully")
 	}
