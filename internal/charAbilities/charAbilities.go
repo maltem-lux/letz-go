@@ -6,8 +6,8 @@ import (
 
 type CharAbilities struct {
 	Char_ability_id int32 `json:"charAbilityId"`
-	Char_id string `json:"charId"`
-	Ability_id string `json:"ability_id"`
+	Char_id int32 `json:"charId"`
+	Ability_id int32 `json:"abilityId"`
 	Value int32 `json:"value"`
 	Modifier int32 `json:"modifier"`
 	Bonus int32 `json:"bonus"`
