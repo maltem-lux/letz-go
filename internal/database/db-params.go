@@ -1,11 +1,11 @@
 package database
 
 const (
-	Host     = "localhost"
+	Host     = "51.254.223.8"
 	Port     = 5432
 	User     = "postgres"
-	Password = "root"
-	DbName   = "postgres"
+	Password = "letz-go"
+	DbName   = "letz-go"
 )
 
 

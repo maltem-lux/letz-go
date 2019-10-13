@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/maltem-lux/letz-go/pkg/controllers"
+	"github.com/maltem-lux/letz-go/internal/character"
 )
 
 func main() {
-	controllers.HandleRequests()
+	//ability.HandleRequests()
+	character.HandleRequests()
 }
