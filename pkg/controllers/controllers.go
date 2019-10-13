@@ -3,12 +3,14 @@ package controllers
 import (
 	"fmt"
 	"github.com/maltem-lux/letz-go/internal/ability"
+	"github.com/maltem-lux/letz-go/internal/character"
 	"log"
 	"net/http"
 )
 
 func HandleRequests() {
 	http.HandleFunc("/", homePage)
+	http.HandleFunc("/characters", character.ReturnCharacters)
 	http.HandleFunc("/abilities", ability.ReturnAbilities)
 	log.Fatal(http.ListenAndServe(":10000", nil))
 }
