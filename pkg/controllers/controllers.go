@@ -11,7 +11,7 @@ import (
 
 func HandleRequests() {
 	http.HandleFunc("/", homePage)
-	http.HandleFunc("/characters", character.ReturnCharacters)
+	http.HandleFunc("/characters", character.Handler)
 	http.HandleFunc("/abilities", ability.ReturnAbilities)
 	http.HandleFunc("/charAbilities", charAbilities.ReturnCharAbilities)
 	log.Fatal(http.ListenAndServe(":10000", nil))
