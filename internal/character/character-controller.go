@@ -27,18 +27,15 @@ func handleCharDetails(w http.ResponseWriter, paramCharId string) {
 		errMsg, _ := fmt.Printf("Error converting param to int : %s", err)
 		panic(errMsg)
 	} else {
-		fmt.Printf("Endpoint Hit: ReturnCharacterById with ID %d", charId)
-
+		fmt.Printf("Endpoint Hit: Return CharDetails with ID %d", charId)
 		c:= FindById(int32(charId))
 		json.NewEncoder(w).Encode(c)
-		fmt.Printf("Character with ID %d retrieved.", charId)
+		fmt.Printf("CharDetails with ID %d retrieved.", charId)
 	}
 }
 
 func handleAllCharsOfPlayer(w http.ResponseWriter) {
-	log.Println("Url Param 'charId' is missing")
-	fmt.Println("Endpoint Hit: returnCharacters")
-
+	fmt.Println("Endpoint Hit: return AllCharactersOfPlayer")
 	a:= FindByPlayerId(1)
 	json.NewEncoder(w).Encode(a)
 	fmt.Println("Characters retrieved.")
