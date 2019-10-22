@@ -40,3 +40,13 @@ func handleAllCharsOfPlayer(w http.ResponseWriter) {
 	json.NewEncoder(w).Encode(a)
 	fmt.Println("Characters retrieved.")
 }
+
+func Create(w http.ResponseWriter, req *http.Request) {
+	decoder := json.NewDecoder(req.Body)
+	var c Character
+	err := decoder.Decode(&c)
+	if err != nil {
+		panic(err)
+	}
+	log.Println(&c.Name)
+}

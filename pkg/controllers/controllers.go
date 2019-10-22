@@ -14,6 +14,7 @@ import (
 func HandleRequests() {
 	http.HandleFunc("/", homePage)
 	http.HandleFunc("/characters", character.Handler)
+	http.HandleFunc("/newCharacter", character.Create)
 	http.HandleFunc("/abilities", ability.ReturnAbilities)
 	http.HandleFunc("/charAbilities", charAbilities.ReturnCharAbilities)
 	http.HandleFunc("/skills", skill.ReturnSkills)
