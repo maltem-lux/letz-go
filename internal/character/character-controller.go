@@ -41,12 +41,17 @@ func handleAllCharsOfPlayer(w http.ResponseWriter) {
 	fmt.Println("Characters retrieved.")
 }
 
-func Create(w http.ResponseWriter, req *http.Request) {
-	decoder := json.NewDecoder(req.Body)
+func Create(w http.ResponseWriter, r *http.Request) {
+	cors.EnableCors(&w)
 	var c Character
-	err := decoder.Decode(&c)
-	if err != nil {
-		panic(err)
+	if r.Body == nil {
+		http.Error(w, "Please send a request body", 400)
+		return
 	}
-	log.Println(&c.Name)
+	err := json.NewDecoder(r.Body).Decode(&c)
+	if err != nil {
+		http.Error(w, err.Error(), 400)
+		return
+	}
+	fmt.Println(c.Name)
 }
