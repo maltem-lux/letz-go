@@ -7,3 +7,5 @@ func FindByPlayerId(id int32) *[]Character {
 	database.DbMgr.GetConnection().Where(PlayerId + " = ?", id).Find(&c)
 	return &c
 }
+
+// TODO Add a method FindById to retrieve only the char with given id

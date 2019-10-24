@@ -53,3 +53,16 @@ Creation of the Controller, DAO and Handler
     2. We also need to find the way to launch the go program as a Daemon listening on Port 10000
 2. Into /internal/character/character-dao.go file, create a Method which will retrieve the list of Characters of a given Player id
 3. Into /internal/character/character-controller.go file, create the handler for the route we have just created 
+
+### Exercise 05 : Implementing a GET Mapping Controller with ID as parameter - No Use of Framework
+
+We will reuse what we have just done before, but this time, we must display the details of a selected char.
+In the front, once you select a char, you go to his/her details (by now, there is no backend for it, so nothing really correct is displayed)  
+We are going to :
+
+Adapt the Route to /characters so that the method called retrieves the ID into param
+1. Tips : URI called is : /characters?charId=1
+2. Param to retrieve
+3. Adapt the existing handler to : 
+    1. Either retrieve all the Characters
+    2. Or get only details on the given charId
