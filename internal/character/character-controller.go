@@ -57,5 +57,5 @@ func Create(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), 400)
 		return
 	}
-	fmt.Printf("Char is : %v", c)
+	fmt.Printf("Char is : %+v", c)
 }
