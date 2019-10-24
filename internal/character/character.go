@@ -1,4 +1,17 @@
 package character
 
-// TODO : Create a Character Structure with the fields given in the README.md
-// TODO : Create a function which will prettify the toString of this Char
+import (
+	"fmt"
+)
+
+type Character struct {
+	Id int32
+	Age int32
+	Name string
+	Gender string
+}
+
+func (c *Character) ToString() string {
+	return fmt.Sprintf("Id : %v, Age : %v, Name : %v, Gender : %v.",
+		c.Id, c.Age, c.Name, c.Gender)
+}

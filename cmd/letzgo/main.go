@@ -1,11 +1,6 @@
 package main
 
 func main() {
-	// TODO : Declare a Character Object
 
-	// TODO : Instantiate it.
-
-	// TODO : Display it.
+	// TODO Connect to the Database using the init function into db-manager.go file
 }
-
-
