@@ -43,6 +43,10 @@ func handleAllCharsOfPlayer(w http.ResponseWriter) {
 
 func Create(w http.ResponseWriter, r *http.Request) {
 	cors.EnableCors(&w)
+	if (*r).Method == "OPTIONS" {
+		return
+	}
+
 	var c Character
 	if r.Body == nil {
 		http.Error(w, "Please send a request body", 400)
@@ -53,5 +57,5 @@ func Create(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), 400)
 		return
 	}
-	fmt.Println(c.Name)
+	fmt.Printf("Char is : %v", c)
 }

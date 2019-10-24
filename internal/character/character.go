@@ -22,9 +22,9 @@ type Character struct {
 	Level int32 `json:"level"`
 	Alignment string `json:"alignment"`
 	Deity string `json:"deity"`
-	Height int32 `json:"height"`
+	Height int32 `json:"height,string"`
 	Height_unit string `json:"heightUnit"`
-	Weight int32 `json:"weight"`
+	Weight int32 `json:"weight,string"`
 	Weight_unit string `json:"weightUnit"`
 	Creation_date time.Time `json:"creationDate"`
 }
