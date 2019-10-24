@@ -13,3 +13,5 @@ func FindByPlayerId(id int32) *[]Character {
 	database.DbMgr.GetConnection().Where(PlayerId + " = ?", id).Find(&c)
 	return &c
 }
+
+// TODO Create a Function to Insert a new Character into DB

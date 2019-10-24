@@ -66,3 +66,12 @@ Adapt the Route to /characters so that the method called retrieves the ID into p
 3. Adapt the existing handler to : 
     1. Either retrieve all the Characters
     2. Or get only details on the given charId
+
+### Exercise 06 : Implementing a POST Mapping Controller to create a Character
+
+On the home page of the front, it is possible to create a Char.
+But the POST Controller has not been developed yet.
+
+1. Add the route to map to the char creation. Route is "/newCharacter"
+2. Create the method which does the POST (route) in the character-controller.go
+3. Call the GORM method to insert into DB the new Character (character-dao.go)

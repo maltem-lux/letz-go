@@ -40,3 +40,5 @@ func handleAllCharsOfPlayer(w http.ResponseWriter) {
 	json.NewEncoder(w).Encode(a)
 	fmt.Println("Characters retrieved.")
 }
+
+// TODO Create the function which handles the Creation of the Character
