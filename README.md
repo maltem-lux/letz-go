@@ -38,3 +38,18 @@ Here are the steps to follow :
     * DbName ("letz-go")
 2. Follow what's required into file : /internal/database/db-manager.go
 3. into main.go file, try to connect to the database and display a Success log
+
+
+### Exercise 04 : Implementing a GET Mapping Controller - No Use of Framework
+
+First of all, you can launch this URL : https://maltem-lux.github.io/letzgo-front/#/home
+You will quickly notice that it tries to connect to your localhost:10000 URL (which is the Backend GO URL)
+
+So the objective of this exercise is to create into the backend a GET Mapping Controller to display the list of characters into this main screen.
+
+Creation of the Controller, DAO and Handler 
+1. Into /pkg/controllers/controllers.go file, 
+    1. We need to add the route to the URI and the method called once the URI is reached
+    2. We also need to find the way to launch the go program as a Daemon listening on Port 10000
+2. Into /internal/character/character-dao.go file, create a Method which will retrieve the list of Characters of a given Player id
+3. Into /internal/character/character-controller.go file, create the handler for the route we have just created 
