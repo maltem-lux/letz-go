@@ -1,7 +1,7 @@
 package main
 
 func main() {
-	// TODO : Declare aCharacter Object
+	// TODO : Declare a Character Object
 
 	// TODO : Instantiate it.
 
