@@ -1,9 +1,8 @@
 package main
 
-import (
-	"github.com/maltem-lux/letz-go/pkg/controllers"
-)
-
 func main() {
-	controllers.HandleRequests()
+
+	// TODO : Call a sayHello Method to output into log/console "Hello name !"
 }
+
+
