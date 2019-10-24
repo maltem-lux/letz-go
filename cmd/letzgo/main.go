@@ -1,13 +1,11 @@
 package main
 
-import "fmt"
-
 func main() {
-	hello("Maltem Luxembourg")
-}
+	// TODO : Declare aCharacter Object
 
-func hello(name string) {
-	fmt.Printf("Hello %s !", name)
+	// TODO : Instantiate it.
+
+	// TODO : Display it.
 }
 
 
