@@ -58,4 +58,5 @@ func Create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	fmt.Printf("Char is : %+v", c)
+	CreateCharacter(c)
 }

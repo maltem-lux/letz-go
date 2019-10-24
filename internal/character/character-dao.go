@@ -15,3 +15,7 @@ func FindByPlayerId(id int32) *[]Character {
 	database.DbMgr.GetConnection().Where(PlayerId + " = ?", id).Find(&c)
 	return &c
 }
+
+func CreateCharacter(character Character) {
+	database.DbMgr.GetConnection().Create(&character)
+}

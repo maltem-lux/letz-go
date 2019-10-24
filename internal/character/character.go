@@ -11,7 +11,7 @@ const (
 )
 
 type Character struct {
-	Char_id int32 `json:"charId"`
+	Char_id int32 `json:"charId" gorm:"not null;primary_key;AUTO_INCREMENT"`
 	Race_id int32 `json:"raceId"`
 	Player_id int32 `json:"playerId"`
 	Campaign_id int32 `json:"campaign"`
