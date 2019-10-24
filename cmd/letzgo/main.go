@@ -1,8 +1,13 @@
 package main
 
-func main() {
+import "fmt"
 
-	// TODO : Call a sayHello Method to output into log/console "Hello name !"
+func main() {
+	hello("Maltem Luxembourg")
+}
+
+func hello(name string) {
+	fmt.Printf("Hello %s !", name)
 }
 
 
