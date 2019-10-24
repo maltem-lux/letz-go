@@ -18,6 +18,6 @@ Of course, name shall be a parameter given to the called method.
     * gender (string)...
 * Create a function toString to prettify the way the Character object will be displayed.
     * It must be Public
-    * It must be applied to a Pointer of Character Structure
+    * It must be applied to a Pointer of Character Structure (so that we call it like c.toString())
     * It must return a String representation of the Structure    
 * in the main.go file, create a new Character with arbitrary values and display it
