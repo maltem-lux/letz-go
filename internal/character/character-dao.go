@@ -1,4 +1,9 @@
 package character
 
-// TODO Create a method FindByPlayerId (default player Id to use will be 1).
-//  This method must call DB with GORM and return a slice of characters (Filtered by "PlayerId = 1")
+import "github.com/maltem-lux/letz-go/internal/database"
+
+func FindByPlayerId(id int32) *[]Character {
+	c := make([]Character, 0)
+	database.DbMgr.GetConnection().Where(PlayerId + " = ?", id).Find(&c)
+	return &c
+}

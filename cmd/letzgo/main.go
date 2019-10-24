@@ -1,6 +1,7 @@
 package main
 
-func main() {
+import "github.com/maltem-lux/letz-go/pkg/controllers"
 
-	// TODO Launch the program as a Daemon to handle the requests we have in the route config
+func main() {
+	controllers.HandleRequests()
 }

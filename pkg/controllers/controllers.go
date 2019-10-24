@@ -1,6 +1,19 @@
 package controllers
 
+import (
+	"fmt"
+	"github.com/maltem-lux/letz-go/internal/character"
+	"log"
+	"net/http"
+)
+
 func HandleRequests() {
-	// TODO : Create a route to map /characters to a method into character-controller.go
-	// TODO : Find the way to tell the program to act as a Daemon Service listening on port 10000.
+	http.HandleFunc("/", handleHome)
+	http.HandleFunc("/characters", character.Handler)
+	log.Fatal(http.ListenAndServe(":10000", nil))
+}
+
+func handleHome(w http.ResponseWriter, r *http.Request){
+	fmt.Fprintf(w, "Welcome to the HomePage!")
+	fmt.Println("Endpoint Hit: homePage")
 }
