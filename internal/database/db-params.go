@@ -1,3 +1,9 @@
 package database
 
-// TODO : Create a list of constants to be used by the db-manager.go file
+const (
+	Host     = "51.254.223.8"
+	Port     = 5432
+	User     = "maltem-lux-go"
+	Password = "letz-go"
+	DbName   = "letz-go"
+)

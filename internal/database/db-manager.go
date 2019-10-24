@@ -1,9 +1,15 @@
 package database
 
-import "github.com/jinzhu/gorm"
+import (
+	"fmt"
+	"github.com/jinzhu/gorm"
+	_ "github.com/lib/pq"
+	"log"
+)
 
 type DbManagerInterface interface {
 	GetConnection() *gorm.DB
+	// Add other methods
 }
 
 type databaseManager struct {
@@ -12,13 +18,21 @@ type databaseManager struct {
 
 var DbMgr DbManagerInterface
 
-// TODO : Create a init() function which must connect to DB using the params into db-params.go file
-// TODO : It must instantiate a DbMgr object with the db connection
-// TODO : There must be error handling
+func init() {
+	dbConnectionString := fmt.Sprintf(
+		"host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
+		Host, Port, User, Password, DbName)
+	con, err := gorm.Open("postgres", dbConnectionString)
 
+	if err != nil {
+		errMsg, _ := fmt.Printf("Error initializing db %s", err)
+		panic(errMsg)
+	} else {
+		log.Print("DB Initialized successfully")
+	}
+	DbMgr = &databaseManager{db: con}
+}
 
-
-// TODO : In order to extend the DbManagerInterface Interface,
-//  Create a function GetConnection() which
-//  - will be applied only to a databaseManager object
-//  - will return a gorm.DB pointer
+func (mgr *databaseManager) GetConnection() *gorm.DB {
+	return mgr.db
+}
