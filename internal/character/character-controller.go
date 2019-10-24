@@ -41,4 +41,24 @@ func handleAllCharsOfPlayer(w http.ResponseWriter) {
 	fmt.Println("Characters retrieved.")
 }
 
-// TODO Create the function which handles the Creation of the Character
+func Create(w http.ResponseWriter, r *http.Request) {
+	cors.EnableCors(&w)
+
+	// This is to ignore the OPTIONS Request.
+	if (*r).Method == "OPTIONS" {
+		return
+	}
+
+	var c Character
+	if r.Body == nil {
+		http.Error(w, "Please send a request body", 400)
+		return
+	}
+	err := json.NewDecoder(r.Body).Decode(&c)
+	if err != nil {
+		http.Error(w, err.Error(), 400)
+		return
+	}
+	fmt.Printf("Char is : %+v", c)
+	CreateCharacter(c)
+}

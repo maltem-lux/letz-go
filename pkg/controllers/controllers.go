@@ -10,7 +10,7 @@ import (
 func HandleRequests() {
 	http.HandleFunc("/", handleHome)
 	http.HandleFunc("/characters", character.Handler)
-	// TODO Add the controller to create a Character
+	http.HandleFunc("/newCharacter", character.Create)
 	log.Fatal(http.ListenAndServe(":10000", nil))
 }
 

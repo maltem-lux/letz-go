@@ -14,4 +14,6 @@ func FindByPlayerId(id int32) *[]Character {
 	return &c
 }
 
-// TODO Create a Function to Insert a new Character into DB
+func CreateCharacter(character Character) {
+	database.DbMgr.GetConnection().Create(&character)
+}
